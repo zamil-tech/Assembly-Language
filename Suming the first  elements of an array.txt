@@ -1,0 +1,27 @@
+INCLUDE Irvine32.inc
+
+.data
+arrayB BYTE 10, 20, 30
+arrayW WORD 150, 250, 350arrayD DWORD 600, 1200, 1800
+sum1 DWORD ?
+.code
+main PROC
+movzx eax,arrayB[0]
+movzx ebx,arrayW[0]
+add ebx,eax
+mov eax,arrayD[0]
+add eax,ebx
+mov sum1,eax
+
+
+
+
+
+
+ 
+ call WriteInt
+ call crlf
+;call DumpRegs
+exit
+main ENDP
+END main

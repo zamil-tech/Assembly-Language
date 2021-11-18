@@ -1,0 +1,16 @@
+INCLUDE Irvine32.inc
+
+.data 
+mydouble DWORD 12345678h
+
+.code
+main PROC
+; mov ax,mydouble  gives an error 
+; for to put 2 differnent sizes opeerands we use pointr
+mov ax,WORD ptr mydouble
+mov ax,WORD ptr mydouble+2 
+
+call DumpRegs
+exit
+main ENDP
+END main

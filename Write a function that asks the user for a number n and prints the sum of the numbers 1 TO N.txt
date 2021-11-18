@@ -1,0 +1,29 @@
+INCLUDE Irvine32.inc
+.data
+msg1 BYTE "Enter the Number ",0
+var DWORD ?
+.code
+main PROC
+call sum
+
+
+
+
+
+exit
+main endp
+sum PROC
+mov edx,OFFSET msg1
+call writestring
+call Readint
+mov var,eax
+mov ecx,var
+l:
+add eax,var
+dec var
+loop l
+call writeint
+sum ENDP
+
+
+end main

@@ -1,0 +1,43 @@
+INCLUDE Irvine32.inc
+
+.data
+.data
+array DWORD 2,3,4,5,4
+theSum DWORD ?
+
+.code
+main PROC
+mov esi,OFFSET array
+mov ecx,LENGTHOF array
+call sum
+mov thesum,eax
+;mov ebx,eax
+
+
+
+exit
+main ENDP	
+
+sum PROC
+push esi
+push ecx
+
+mov eax,0
+	l:
+	add eax,[esi]
+	inc esi
+	loop l
+	pop ecx
+	pop esi
+	
+
+	;dd eax,val2
+;mov ebx,val3
+	;call writechar
+	call writeint
+	call crlf
+	ret
+	sum ENDP
+END main
+
+ 

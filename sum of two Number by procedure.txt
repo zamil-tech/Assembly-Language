@@ -1,0 +1,25 @@
+INCLUDE Irvine32.inc
+
+.data
+val DWORD 23
+val2 DWORD 2
+
+.code
+sum PROC
+	mov eax,val
+	add eax,val2
+	;mov ebx,val3
+	;call writechar
+	call writeint
+	call crlf
+;main PROC
+ 
+
+
+
+
+exit
+;main ENDP
+;END main
+sum ENDP
+END sum
