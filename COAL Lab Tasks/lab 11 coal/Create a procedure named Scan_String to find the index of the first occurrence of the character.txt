@@ -1,0 +1,32 @@
+INCLUDE Irvine32.inc
+.data
+Str1 BYTE "127&j~3#^&*#*#45^",0
+.code
+main PROC
+call Scan_String
+exit
+main ENDP
+
+Scan_String PROC
+mov eax,1
+mov ecx,LENGTHOF str1
+mov edi,OFFSET str1
+mov al,'#'
+cld
+
+repne scasb
+
+jnz quit
+dec edi
+mov eax,ecx
+mov ecx,lengthof Str1
+sub ecx,eax
+call dumpregs
+quit:
+
+
+
+
+ret
+Scan_String ENDP
+END main

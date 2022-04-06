@@ -1,0 +1,21 @@
+INCLUDE Irvine32.inc
+.data
+Imm8 word 20
+Data1 word 8
+Data2 word 15
+Data3 word 20
+
+.code
+main PROC
+
+mov bx,Imm8
+
+add bx,Data1
+add bx,Data2
+add bx,Data3
+
+
+call DumpRegs
+exit
+main ENDP
+END main

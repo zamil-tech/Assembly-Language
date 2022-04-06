@@ -1,0 +1,28 @@
+INCLUDE Irvine32.inc
+.data
+array SDWORD 0, 0, 0, 150, 120, 35, -12, 66, 4, 0
+var1 DWORD 5
+x DWORD ?
+.code
+main PROC
+mov ecx,LENGTHOF array
+mov edx,var1+1
+cmp var1,ecx
+
+jb next
+
+jmp finish
+next:
+cmp ecx,edx
+jb finish
+mov x,0
+jmp khtm
+finish:
+mov x,1
+jmp khtm
+khtm:
+call Dumpregs
+exit
+main ENDP
+END main
+

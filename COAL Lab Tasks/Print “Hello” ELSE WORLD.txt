@@ -1,0 +1,26 @@
+INCLUDE Irvine32.inc
+.data
+
+;var1 DWORD 5
+
+
+ msg1 BYTE,"hELLO ",0 
+ msg2 BYTE "World",0 
+ .code
+  main PROC 
+ _WHILE: cmp var1,10 
+ ja _end_while
+  cmp var1,5 
+  JAE _else
+   mov edx,offset msg1 
+   call writestring 
+   jmp _end_while 
+   _else: mov edx,offset msg2
+    call writestring 
+	inc var1
+	 _end_while:
+	 
+exit
+main ENDP
+END main
+

@@ -1,0 +1,33 @@
+INCLUDE Irvine32.inc
+.data
+intArr SDWORD 0,0,0,150,120,35,-12,66,4,0
+x sDWORD ?
+var sDWORD 5
+.code
+main PROC
+mov ecx,LENGTHOF intArr
+
+mov edx,var+1
+cmp var,ecx    ;COMPARING var1 and ecx 
+jge again ;jump if it greater or equal
+
+
+JMP FINISH
+
+again:
+cmp ecx,edx
+jl khtm
+mov x,0
+jmp Finish
+khtm:
+mov x,1
+
+call writedec
+FINISH:
+
+
+
+
+exit
+main ENDP
+END main

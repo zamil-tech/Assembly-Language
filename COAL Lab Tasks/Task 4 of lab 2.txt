@@ -1,0 +1,21 @@
+edx = -eax + 1 + ebx + edx – ecx + 0Ah-65o+73d
+
+
+INCLUDE Irvine32.inc
+.code
+main PROC
+
+mov ecx,10001101b
+sub ecx,0D83h
+add ecx,385d
+add ecx,10d
+add ecx,1111101b
+
+sub ecx,0Eh
+add ecx,0Fh
+
+
+call DumpRegs
+exit 
+main ENDP
+END main

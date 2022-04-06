@@ -1,0 +1,25 @@
+INCLUDE Irvine32.inc
+.data
+intArr SDWORD 0,0,0,150,120,35,-12,66,4,0
+.code
+main PROC
+mov ecx,LENGTHOF intArr
+mov esi,offset intArr
+l:
+cmp WORD PTR [esi] ,0
+pushfd
+add esi,type intArr
+popfd
+loope l
+jz quite
+sub esi,type intArr
+mov eax,intArr[esi]
+quite:
+call writeint
+
+
+
+
+exit
+main ENDP
+END main

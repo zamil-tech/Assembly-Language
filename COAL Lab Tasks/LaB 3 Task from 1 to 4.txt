@@ -1,0 +1,28 @@
+INCLUDE Irvine32.inc
+.DATA
+; Question #1
+val1 SWORD ?						;data declaration for a16-bit signed integer
+VAL2 SBYTE (-10)					;Data declaration for 8 bit signed integer
+
+; Question#2
+
+val3 SDWORD -2147483648					 ;32  bit with smallest negative signed integer
+
+;Question#3
+wArray WORD 10,20,30						;16 BIT array with 3 initilizers
+
+; Question#4
+
+favoritecolor BYTE "Green",0
+varA WORD 12
+VARB WORD 2
+VARC WORD 13
+VARD WORD 8
+VARE WORD 14
+
+.code 
+main PROC
+call DumpRegs
+exit
+main ENDP
+END main

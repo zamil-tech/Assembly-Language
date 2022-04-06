@@ -1,0 +1,40 @@
+INCLUDE Irvine32.inc
+.data
+string1 BYTE 'abcd' ,0
+string2 BYTE 'FSR',0
+string3 BYTE 'Both strings are equal ',0
+string4 BYTE 'Both are not equal ',0
+.code
+main PROC
+
+call iscompare
+exit
+main ENDP
+ 
+iscompare PROC
+
+mov esi,OFFSET string1
+mov edi,OFFSET string2
+mov ecx,LENGTHOF string1
+CLD
+cmpsb
+je l
+
+jNE l1
+
+l:
+mov edx,OFFSET string3
+call WRITESTRING
+JMP NEXT
+l1:
+mov edx,OFFSET string4
+call WRITESTRING
+NEXT:
+ret
+
+
+iscompare ENDP
+
+
+
+END main

@@ -1,0 +1,27 @@
+Write a program in assembly language that implements following expression:
+? edx = -eax + 1 + ebx + edx – ecx + 0Ah-65o+73d
+
+ INCLUDE Irvine32.inc
+
+
+.code
+main PROC
+mov eax,0d
+mov ebx,0d
+mov ecx,0d
+mov edx,0d
+mov edx,eax
+sub edx,eax
+add edx,1d
+add edx,ebx
+add edx,edx
+sub edx,ecx
+add edx,0Ah
+sub edx,650d
+add edx,73d
+
+
+call DumpRegs
+exit
+main ENDP
+END main

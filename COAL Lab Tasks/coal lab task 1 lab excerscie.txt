@@ -1,0 +1,16 @@
+INCLUDE Irvine32.inc
+;code
+.Data
+val1 SWORD ?  ;16 bit signed uninitialized bit
+val2 BYTE (-10) ; initilized 8 bit signed bit
+.code
+main PROC
+mov ax,val1
+
+
+;val3 SDWORD(-3)  ; 32signed bit integer with small possible value
+
+call DumpRegs
+exit
+main ENDP
+end main

@@ -1,0 +1,22 @@
+INCLUDE Irvine32.inc
+.data
+a word 10h
+b word 15h
+L word 20h
+d word 30h
+.code
+main PROC
+mov ax,a
+add ax,b
+mov bx,ax	;bx=a+b
+mov dx,a
+sub dx,b
+   ;cx=a-b
+add bx,dx  ;bx=(a+b)+(a-b)
+add bx,L  
+add bx,d
+
+call DumpRegs
+exit
+main ENDP
+end main

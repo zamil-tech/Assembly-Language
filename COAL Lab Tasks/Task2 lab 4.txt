@@ -1,0 +1,18 @@
+INCLUDE Irvine32.inc
+.data
+val1 WORD 7FF0h		
+
+
+.code
+main PROC
+
+mov ax,val1
+add al,10h   ;a.cf=1 , sf=0,ZF=1,of=0
+add ah,1   ;CF=0  SF=1  ZF=0  OF=1
+add ax,2	;CF=0  SF=0  ZF=0  OF=0  
+
+
+call DumpRegs
+exit
+main ENDP
+END main

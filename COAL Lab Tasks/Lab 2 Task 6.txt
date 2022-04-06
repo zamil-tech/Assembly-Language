@@ -1,0 +1,23 @@
+Lab 2 Task 6
+eax = 5ADh – eax + 65o + 65d – 11110111 + 150
+
+
+INCLUDE Irvine32.inc
+.code
+main PROC
+mov eax,0d
+mov eax,5Ah
+mov ebx,eax
+sub ebx,eax
+add ebx,65o
+add ebx,65d
+add ebx,150
+mov ebx,eax
+
+
+
+
+call DumpRegs
+exit
+main ENDP
+END main

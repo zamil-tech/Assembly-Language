@@ -1,0 +1,62 @@
+INCLUDE Irvine32.inc
+.data
+var1 DWORD ?
+var2 DWORD ?
+var3 Dword ?
+var4 DWORD ?
+msg1 Byte "These integers are equal ",0
+msg2 BYTE "These are not equal ",0
+msg3 BYTE "Enter the integer ",0
+.code
+main PROC
+mov edx,OFFSET msg3
+call writestring
+call readint
+mov var1,eax
+
+mov edx,OFFSET msg3
+call writestring
+call readint
+mov var2,eax
+
+mov edx,OFFSET msg3
+call writestring
+call readint
+mov var3,eax
+
+mov edx,OFFSET msg3
+call writestring
+call readint
+mov var4,eax
+mov eax,var1
+cmp eax,var2
+je check
+jmp finish
+
+check:
+mov eax,var2
+cmp eax,var3
+je next
+jmp finish
+
+next:
+mov eax,var3
+cmp eax,var4
+je last
+jmp finish
+last:
+mov edx,offset msg1
+call writestring
+call crlf
+call khtm
+finish:
+mov edx,offset msg2
+call writestring
+call crlf
+
+khtm:
+
+
+exit
+main ENDP
+END main

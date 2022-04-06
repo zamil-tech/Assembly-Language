@@ -1,0 +1,91 @@
+
+INCLUDE Irvine32.inc
+.data
+Val DWORD ? 
+space BYTE " ",0 
+myStr BYTE "Genrate list of 20 Random numbers from 0 to 990",0dh, 0ah 
+.code
+main PROC
+mov edx, offset myStr
+ call writeString
+mov edx, offset space
+ mov ebx, 1
+mov ecx, 20
+
+ L:
+	mov eax, +991
+	call RandomRange 
+	call writeDEC
+	mov eax, 5 
+
+
+	call Delay
+	call crlf
+	mov Val, ecx 
+	mov ecx, ebx
+	 L1:
+		call writestring
+	Loop L1
+	add ebx, 1
+	mov ecx, Val
+Loop L 
+exit
+main ENDP
+ END main
+
+
+
+
+
+
+
+
+
+
+
+; My
+INCLUDE Irvine32.inc
+.data
+
+msg byte "Genrating 50 number ",0
+.code
+main PROC
+mov edx,OFFSET msg
+call writestring
+call crlf
+
+;call crlf
+mov dh,1
+mov dl,2
+mov ecx,20
+l:
+		call gotoxy
+
+	mov eax,990
+	mov ebx,5
+	call delay
+	call RandomRange
+
+	
+	call writeint
+	;call crlf
+
+
+	add dh,1
+	add dl,2
+	loop l
+	
+
+
+
+
+
+
+exit
+main ENDP
+END main		
+
+
+
+
+
