@@ -1,0 +1,23 @@
+INCLUDE Irvine32.inc
+.data
+.code
+main PROC
+push 6
+push 5
+call Addtwo
+exit
+main ENDP
+
+
+
+Addtwo PROC
+push ebp
+mov ebp,esp
+mov eax,[ebp+12]
+add eax,[ebp+8]
+call writedec
+call crlf
+pop ebp
+ret
+Addtwo ENDP
+end main

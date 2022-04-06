@@ -1,0 +1,17 @@
+INCLUDE Irvine32.inc
+.data
+byteval BYTE 10
+wordval WORD 1000h
+.code
+
+; Direct Operands
+INVOKE sub1,byteval,wordval   ;Invoke Procedure_name,operands
+
+;Adress of variable
+INVOKE sub2,ADDR byteval
+
+;register expression
+INVOKE sub3,eax,(10*20)
+
+;indirect operand
+INVOKE sub4,[ebx]

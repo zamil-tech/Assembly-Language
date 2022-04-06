@@ -1,0 +1,29 @@
+INCLUDE Irvine32.inc
+.data
+var_1 DWORD 5
+var_2 DWORD 6
+
+x_para  EQU  [EBP+12]
+y_para EQU [ebp+8]
+
+.code
+main PROC
+push var_2
+push var_1
+call Addtwo
+exit
+main ENDP
+
+
+
+Addtwo PROC
+push ebp
+mov ebp,esp
+mov eax,x_para
+add eax,y_para
+call writedec
+call crlf
+pop ebp
+ret
+Addtwo ENDP
+end main

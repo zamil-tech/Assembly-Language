@@ -1,0 +1,13 @@
+INCLUDE Irvine32.inc
+.data
+byteval BYTE 10
+wordval WORD 1000h
+.code
+
+; name_proc ,
+;after comma all paramters
+sub1 PROC,
+
+var:BYTE     ; Parameter_name:type
+
+
